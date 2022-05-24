@@ -4,7 +4,7 @@ import { types } from "../actions/types";
 const initialState = {
   posts: [],
   loadingPosts: false,
-  error: {},
+  error: null ,
 };
 
 const fetchingPosts = (state, action) => {

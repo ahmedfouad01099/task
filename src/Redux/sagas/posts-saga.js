@@ -5,12 +5,15 @@ import { getAllPosts } from "../services/home";
 // GNERATER FUNCTION
 function* fetchingPosts() {
   try {
-    const posts = yield call(getAllPosts);
-    console.log("9-", posts);
-    yield put({ type: types.SUCCESS_FETCHING_POSTS, payload: posts });
+    const response = yield call(getAllPosts);
+
+    if (response instanceof Error) {
+      throw new Error(response);
+    }
+    yield put({ type: types.SUCCESS_FETCHING_POSTS, payload: response });
   } catch (error) {
-    console.log("12-", error);
-    yield put({ type: types.FAILER_FETCHING_POSTS, error: error });
+    console.log("12-", error.toString());
+    yield put({ type: types.FAILER_FETCHING_POSTS, error: error.toString() });
   }
 }
 

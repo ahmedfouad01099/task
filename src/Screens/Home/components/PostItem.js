@@ -10,10 +10,16 @@ function PostItem({ item, props }) {
       onPress={() => props.navigation.navigate("Details", { post: item })}
     >
       <View style={styles.container}>
-        <View>
+        <View
+          style={{
+            width: "30%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Image style={styles.tinyLogo} source={{ uri: item.url }} />
         </View>
-        <View style={{ width: "80%" }}>
+        <View style={{ width: "70%" }}>
           <Text style={{ color: "#000" }}>{`Post: ${item.id}`}</Text>
           <Text style={{ color: "#000" }}>{item.title}</Text>
         </View>
@@ -27,9 +33,11 @@ export default PostItem;
 const styles = StyleSheet.create({
   container: {
     marginVertical: 10,
+    width: "100%",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
+    paddingVertical: 10,
   },
   tinyLogo: {
     width: 50,

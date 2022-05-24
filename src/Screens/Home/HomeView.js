@@ -1,14 +1,26 @@
 import React from "react";
 import {
   ActivityIndicator,
+  Button,
   FlatList,
   StyleSheet,
   Text,
   View,
 } from "react-native";
+import { onFetchingPosts } from "../../Redux/actions/home";
 import PostItem from "./components/PostItem";
 
-function HomeView({ props, posts, loadingPosts }) {
+function HomeView({ props, posts, loadingPosts, error, dispatch }) {
+  if (error) {
+    return (
+      <View style={styles.container}>
+        {console.log("15-", error)}
+        <Text style={{ marginVertical: 10 }}>{error}</Text>
+        <Button onPress={() => dispatch(onFetchingPosts())} title="Try Again" />
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
       {loadingPosts ? (

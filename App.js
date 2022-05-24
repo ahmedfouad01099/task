@@ -7,7 +7,7 @@ import store from "./store";
 export default function App() {
   return (
     <Provider store={store}>
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1, paddingTop: 20 }}>
         <StatusBar
           backgroundColor="#fff"
           barStyle={"dark-content"}

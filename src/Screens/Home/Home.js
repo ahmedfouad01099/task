@@ -6,12 +6,13 @@ import HomeView from "./HomeView";
 function Home(props) {
   console.log("5- home");
   const dispatch = useDispatch();
+  const { posts, loadingPosts, error } = useSelector((state) => state.home);
+
   useEffect(() => {
     dispatch(onFetchingPosts());
-  }, []);
+  }, [error]);
 
-  const { posts, loadingPosts } = useSelector((state) => state.home);
-  return <HomeView {...{ props, posts, loadingPosts }} />;
+  return <HomeView {...{ props, posts, loadingPosts, error, dispatch }} />;
 }
 
 export default Home;
