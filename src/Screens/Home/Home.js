@@ -10,8 +10,8 @@ function Home(props) {
     dispatch(onFetchingPosts());
   }, []);
 
-  const { posts } = useSelector((state) => state.home);
-  return <HomeView {...{ props, posts }} />;
+  const { posts, loadingPosts } = useSelector((state) => state.home);
+  return <HomeView {...{ props, posts, loadingPosts }} />;
 }
 
 export default Home;
