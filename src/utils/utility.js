@@ -10,7 +10,6 @@ export const updateArray = (oldArray, updatedProperties) => {
 };
 
 export const checkValidity = (value, rules, newPassword) => {
-  console.log("13", newPassword);
   let isValid = true;
   if (!rules) {
     return true;

@@ -4,7 +4,6 @@ export const getAllPosts = async () => {
     const posts = await res.json();
     return posts;
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
@@ -12,7 +11,6 @@ export const getAllPosts = async () => {
 // ===================================================================
 
 export const onAddingPostService = async (postForm) => {
-  console.log("17--=", postForm);
   try {
     const res = await fetch("https://task-00.herokuapp.com/posts/create", {
       method: "POST",
@@ -27,10 +25,8 @@ export const onAddingPostService = async (postForm) => {
     });
 
     const resData = await res.json();
-    console.log("30--", resData);
     return resData;
   } catch (error) {
-    console.log(error);
     return error;
   }
 };

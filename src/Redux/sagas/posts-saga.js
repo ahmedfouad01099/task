@@ -27,7 +27,6 @@ function* addPost(action) {
       payload: response.responseData.post,
     });
   } catch (error) {
-    console.log("15-", error.toString());
     yield put({ type: types.FAILER_ADDING_POST });
   }
 }
