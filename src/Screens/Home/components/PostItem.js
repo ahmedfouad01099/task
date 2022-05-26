@@ -3,10 +3,9 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import TouchableCmp from "../../../Components/TouchableCmp";
 
 function PostItem({ item, props }) {
-  console.log("5- postItem", item);
   return (
     <TouchableCmp
-      key={item.id}
+      key={item?.id}
       onPress={() => props.navigation.navigate("Details", { post: item })}
     >
       <View style={styles.container}>
@@ -17,11 +16,11 @@ function PostItem({ item, props }) {
             alignItems: "center",
           }}
         >
-          <Image style={styles.tinyLogo} source={{ uri: item.url }} />
+          <Image style={styles.tinyLogo} source={{ uri: item?.url }} />
         </View>
         <View style={{ width: "70%" }}>
-          <Text style={{ color: "#000" }}>{`Post: ${item.id}`}</Text>
-          <Text style={{ color: "#000" }}>{item.title}</Text>
+          <Text style={{ color: "#000" }}>{item?.title}</Text>
+          <Text style={{ color: "#000" }}>{item?.desc}</Text>
         </View>
       </View>
     </TouchableCmp>

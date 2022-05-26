@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
+import formatAMPM from "../../utils/utility";
 
 function DetailsView({ props, post }) {
   return (
@@ -17,10 +18,11 @@ function DetailsView({ props, post }) {
         style={{ width: "100%", height: 200 }}
       />
       <View style={{ width: "100%", paddingHorizontal: 20, marginTop: 16 }}>
-        <Text
-          style={{ fontSize: 20, fontWeight: "bold" }}
-        >{`Post Num ${post.id}`}</Text>
-        <Text style={{ fontSize: 18 }}>{post.title}</Text>
+        <Text style={{ fontSize: 20, fontWeight: "bold" }}>{post.title}</Text>
+        <Text style={{ fontSize: 18 }}>{post.desc}</Text>
+        <Text style={{ fontSize: 15, marginTop: 5 }}>
+          {`Created At: ${formatAMPM(new Date(post.createdAt))}`}
+        </Text>
       </View>
     </View>
   );

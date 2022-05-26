@@ -4,7 +4,6 @@ import { onFetchingPosts } from "../../Redux/actions/home";
 import HomeView from "./HomeView";
 
 function Home(props) {
-  console.log("5- home");
   const dispatch = useDispatch();
   const { posts, loadingPosts, error } = useSelector((state) => state.home);
 

@@ -3,11 +3,13 @@ import { types } from "./types";
 export const onFetchingPosts = () => {
   return { type: types.FETCHING_POSTS };
 };
+// ===============================================================
 
-export const onFetchingPostsSuccess = (posts) => {
-  return { type: types.SUCCESS_FETCHING_POSTS, payload: posts };
+export const onChangingPostInput = (text, inputIdentifier) => {
+  return { type: types.CHANGE_POST_INPUT, text, inputIdentifier };
 };
+// ===============================================================
 
-export const onFetchingPostsFailed = (error) => {
-  return { type: types.FAILER_FETCHING_POSTS, error };
+export const onAddingPost = (postForm, props) => {
+  return { type: types.ADDING_POST, postForm, props };
 };
