@@ -40,7 +40,7 @@ const initialState = {
 
 // ============================================================
 const fetchingPosts = (state, action) => {
-  return updateObject(state, { loadingPosts: true });
+  return updateObject(state, { loadingPosts: true, error: null });
 };
 const fetchingPostsSuccess = (state, action) => {
   return updateObject(state, { loadingPosts: false, posts: action.payload });

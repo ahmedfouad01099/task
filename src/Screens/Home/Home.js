@@ -9,7 +9,7 @@ function Home(props) {
 
   useEffect(() => {
     dispatch(onFetchingPosts());
-  }, [error]);
+  }, []);
 
   return <HomeView {...{ props, posts, loadingPosts, error, dispatch }} />;
 }
